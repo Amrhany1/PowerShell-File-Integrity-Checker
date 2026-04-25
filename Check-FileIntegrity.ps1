@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory=$true)]
-    [ValidateSet("Scan", "Verify")]
+    [ValidateSet("Scan", "Check")]
     [string]$Mode,
 
     [Parameter(Mandatory=$true)]
@@ -82,5 +82,5 @@ function Compare-Hash {
 # --- Execution Block ---
 switch ($Mode) {
     "Scan"   { New-Baseline }
-    "Verify" { Compare-Hash }
+    "Check" { Compare-Hash }
 }
